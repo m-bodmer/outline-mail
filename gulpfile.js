@@ -42,7 +42,7 @@ gulp.task('fileinclude', function() {
 
   // notify to say the task has complete
   .pipe(notify({
-    message: 'Template file includes complete'
+    message: 'Dist templates built'
   }))
 });
 
@@ -103,7 +103,7 @@ gulp.task('clean', function() {
 gulp.task('watch', function() {
   gulp.watch(['templates/components/**/*.html'], ['fileinclude']);
   gulp.watch(['templates/layouts/*.tpl.html'], ['fileinclude']);
-  gulp.watch(['*.html'], ['reload']);
-  gulp.watch(['*.tpl.html'], ['reload']);
+  gulp.watch(['**/*.html'], ['reload']);
+  gulp.watch(['**/*.tpl.html'], ['reload']);
   gulp.watch('templates/img/*' , ['images']);
 });
